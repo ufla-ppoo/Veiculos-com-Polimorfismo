@@ -39,8 +39,8 @@ public class Carro extends Veiculo {
 	 * 
 	 * @return A descricao do carro (a descricao do veiculo mais seus campos separados por tabulacoes)
      */
-    public String getDescricaoCarro() {
-        String descricao = getDescricaoVeiculo();
+    public String getDescricao() {
+        String descricao = super.getDescricao();
         if (ehFlex) {
             descricao = descricao + "\tFlex";
         }

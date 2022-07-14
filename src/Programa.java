@@ -123,32 +123,15 @@ public class Programa {
      * O usuario informa o tipo de veiculo e o modelo.
      */
     private void alterarVelocidadeVeiculo() {
-        int tipo, velocidade;
+        int velocidade;
         String modelo;
-        boolean alterou = false;
        
-        System.out.print("Qual o tipo de veiculo (1-carro, 2-caminhao, 3-onibus)? ");        
-        tipo = Integer.parseInt(entrada.nextLine());
         System.out.print("Digite o modelo: ");
         modelo = entrada.nextLine();
         System.out.print("Digite a velocidade: ");
         velocidade = Integer.parseInt(entrada.nextLine());
         
-        switch(tipo) {
-            case 1: // carro
-                alterou = simulador.alterarVelocidadeCarro(modelo, velocidade);
-                break;
-            case 2: // caminhao
-                alterou = simulador.alterarVelocidadeCaminhao(modelo, velocidade);            
-                break;
-            case 3: // onibus
-                alterou = simulador.alterarVelocidadeOnibus(modelo, velocidade);            
-                break;
-            default:
-                System.out.println("Tipo de veiculo invalido!");
-        }
-        
-        if (alterou) {
+        if (simulador.alterarVelocidade(modelo, velocidade)) {
             System.out.println("Velocidade alterada!");
         }
         else {
